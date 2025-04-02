@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<title>Contacto</title>
+</head>
+<body>
+	<div class="page-header bg-primary text-white text-center">
+		<span class="h4">Contacto de Interesados - BNPRO</span>
+	</div>
+
+	<div class="col l6 s12">
+		<h5 class="white-text">! Bienvenido !</h5>
+		<p class="grey-text text-lighten-4">Por favor, diligencie los datos en el presente formulario a fin entregarle la información de manera oportuna, tan pronto nos sea posible. En un plazo máximo de 24 horas estaremos en contacto con Usted. Es indispenable que sus datos sean consignados para establecer un acercamiento más efectivo.</p>
+		<p class="grey-text text-lighten-4">Igualmente, tenga en cuenta que, para poder brindarle una información puntual y precisa, es necesario que diligencia todos los campos solicitados.</p>
+		<p class="grey-text text-lighten-4">¡ Muchas gracias por contactárnos y por su amable interés !</p>
+		<p class="grey-text text-lighten-4">Cordialmente, Equipo BNPRO</p>
+	  </div>
+
+	<form action="contacto.php" method="POST" style="width:35%;margin:0 auto;">
+		<fieldset>
+			<legend class="text-center header text-success">Datos Contacto</legend>
+			<div class="form-group">
+				<label for="nom">Entidad Territorial</label>
+				<input type="text" Required class="form-control" name="entidad">
+
+				<label for="nom">Nombre del contacto</label>
+				<input type="text" Required class="form-control" name="nombre">
+			</div>
+
+			<div class="form-group">
+				<label for="email">Correo Electrónico</label>
+				<input type="mail" Required class="form-control" name="correo">				
+			</div>
+
+			<div class="form-group">
+				<label for="">Teléfono del Contacto</label>
+				<input type="text" required class="form-control" name="tel">
+			</div>
+
+			<div class="form-group">
+				<label for="">Interesado en:</label>
+				<input type="text" required class="form-control" name="tel">
+			</div>
+
+				<div class="form-group">
+					<div class="checkbox"></div>
+					<label for="">Recordar</label>
+					<input type="checkbox" name="direccion">
+				</div>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="form-control-submit-button">Enviar Información</button>
+			</div>
+			<div class="form-group">
+				<li><a href="./">Volver</a></li>
+			</div>
+		</fieldset>
+	</form>
+
+</div>
+</html>

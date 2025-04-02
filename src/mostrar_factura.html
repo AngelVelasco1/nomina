@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Factura</h1><br>
+        <h2>Vendedor</h2>
+        <div class="form-group">
+			<label for="nombre">id</label>
+			<input required name="id_vendedor" type="text" id="id_vendedor" placeholder="id" class="form-control">
+		</div>
+        <div class="form-group">
+            <label for="ciudad">ciudad</label>
+            <SELECT required name ="id_ciudad" id="id_ciudad" CLASS="form-control">
+            <?php
+                $sentencia= $base_de_datos->prepare('SELECT a.id_ciudad,a.nom_ciudad FROM tab_ciudades AS a');
+                $sentencia->execute();
+                $count= $sentencia->rowCount();
+                $ciudades=$sentencia->fetchAll();
+                foreach($ciudades as $ciudad):
+                    echo'<option value="'.$ciudad["id_ciudad"].'">'.$ciudad["nom_ciudad"].'</option>';
+                endforeach;
+            ?>
+            </SELECT>
+        </div>
+        <p>Teléfono: Teléfono del Vendedor</p>
+        <hr>
+        <h2>Comprador</h2>
+        <p>Nombre: Nombre del Comprador</p>
+        <p>Dirección: Dirección del Comprador</p>
+        <p>Teléfono: Teléfono del Comprador</p>
+        <hr>
+        <h2>Detalle de Productos/Servicios</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto/Servicio</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Añade aquí las filas con los productos/servicios -->
+                <tr>
+                    <td>Producto 1</td>
+                    <td>1</td>
+                    <td>$100.00</td>
+                    <td>$100.00</td>
+                </tr>
+                <tr>
+                    <td>Producto 2</td>
+                    <td>2</td>
+                    <td>$50.00</td>
+                    <td>$100.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="total"><strong>Total a Pagar:</strong> $200.00</p>
+    </div>
+</body>
+</html>

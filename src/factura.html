@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Factura</h1>
+        <p><div class="form-group">
+            <label for="nombre">ID FACTURA</label>
+            <input required name="a.id_fac" type="text" id="a.id_fac" placeholder="ID FACTURA" class="form-control">
+        </div></p>
+        <p></p>
+        <hr>
+        <h2>Vendedor</h2>
+        <p><div class="form-group">
+            <label for="nombre">Nombre del vendedor</label>
+            <input required name="nom_vendedor" type="text" id="nom_vendedor" placeholder="Nombre vendedor" class="form-control">
+        </div></p>
+        <p></p><div class="form-group">
+            <label for="nombre">Apellido vendedor</label>
+            <input required name="ape_vendedor" type="text" id="ape_vendedor" placeholder="Apellido vendedor" class="form-control">
+        </div></p>
+        <p><div class="form-group">
+            <label for="nombre">Telefono</label>
+            <input required name="tel_vendedor" type="text" id="tel_vendedor" placeholder="Telefono" class="form-control">
+        </div></p>
+        <hr>
+        <h2>Comprador</h2>
+        <p><div class="form-group">
+            <label for="nombre">Nombre cliente</label>
+            <input required name="nom_cliente" type="text" id="nom_cliente" placeholder="Nombre cliente" class="form-control">
+        </div></p>
+        <p><div class="form-group">
+            <label for="nombre">Apellido</label>
+            <input required name="ape_cliente" type="text" id="ape_cliente" placeholder="Apellido" class="form-control">
+        </div></p>
+        <p><div class="form-group">
+            <label for="nombre">Telefono</label>
+            <input required name="tel_cliente" type="text" id="tel_cliente" placeholder="Telefono" class="form-control">
+        </div></p>
+        <hr>
+        <h2>Detalle de Productos/Servicios</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col" colspan="1" style="text-align: center">ID</th>
+                    <th>Nombre</th>
+                    <th>cantidad</th>
+                    <th>Valor del producto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Añade aquí las filas con los productos/servicios -->
+                <tr>
+                    <td><div class="form-group">
+                        <label for="ID"></label>
+                        <input required name="id_prod" type="text" id="id_prod" placeholder="ID producto" class="form-control">
+                    </div></td>
+                    <td><div class="form-group">
+                        <label for="nombre"></label>
+                        <input required name="nom_prod" type="text" id="nom_ciudad" placeholder="Nombre producto" class="form-control">
+                    </div></td>
+                    <td><div class="form-group">
+                        <label for="nombre"></label>
+                        <input required name="val_stock" type="text" id="val_stock" placeholder="Stock" class="form-control">
+                    </div></td>
+                    <td><div class="form-group">
+                        <label for="nombre"></label>
+                        <input required name="val_prod" type="text" id="val_prod" placeholder="Valor producto" class="form-control">
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><div class="form-group">
+                        <label for="ID"></label>
+                        <input required name="id_prod" type="text" id="id_prod" placeholder="ID producto" class="form-control">
+                    </div></td>
+                    <td><div class="form-group">
+                        <label for="nombre"></label>
+                        <input required name="nom_prod" type="text" id="nom_ciudad" placeholder="Nombre producto" class="form-control">
+                    </div></td>
+                    <td><div class="form-group">
+                        <label for="nombre"></label>
+                        <input required name="val_stock" type="text" id="val_stock" placeholder="Stock" class="form-control">
+                    </div></td>
+                    <td><div class="form-group">
+                        <label for="nombre"></label>
+                        <input required name="val_prod" type="text" id="val_prod" placeholder="Valor producto" class="form-control">
+                    </div></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="total"><strong>Total a Pagar:</strong></p>
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </div>
+</body>
+</html>
