@@ -36,11 +36,8 @@ Definir el encabezado de todos los programas
         <div class="collapse navbar-collapse" id="miNavbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./listar_regiones.php">Listar</a>
+                    <a class="nav-link" href="./listar_parametros.php">Listar</a>
                 </li>
-<!--            <li class="nav-item">
-                    <a class="nav-link" href="./listarCursor.php">Listar (cursor)</a>
-                </li>-->
                 <li class="nav-item">
                     <a class="nav-link" href="./forma_regiones.php">Agregar</a>
                 </li>
