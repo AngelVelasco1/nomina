@@ -11,8 +11,9 @@ Este archivo lista todos los datos de la tabla, obteniendo a los mismos como un 
 <?php
 include_once "base_de_datos.php";
 /*echo "Entro a Listar para saber si está entrando o no....";*/
-$sentencia = $base_de_datos->query('SELECT id_region, nom_region FROM tab_regiones ORDER BY 1');
-$regiones = $sentencia->fetchAll(PDO::FETCH_OBJ);
+$sentencia = $base_de_datos->query('SELECT * FROM sp_listar_parametros()');
+$parametros = $sentencia->fetchAll(PDO::FETCH_OBJ);
+$num_columnas = $sentencia->columnCount();
 ?>
 <!--Recordemos que podemos intercambiar HTML y PHP como queramos-->
 <?php include_once "encabezado.php" ?>
@@ -26,24 +27,43 @@ $regiones = $sentencia->fetchAll(PDO::FETCH_OBJ);
 			<table class="table table-bordered">
 				<thead class="thead-dark">
 					<tr>
-						<th scope="col" colspan="1" style="text-align: center">ID</th>
-						<th scope="col" colspan="1" style="text-align: center">Región</th>
-						<th scope="col" colspan="1" style="text-align: center">Editar</th>
-						<th scope="col" colspan="1" style="text-align: center">Eliminar</th>
+					<?php  
+
+// Recorrer cada columna para obtener su nombre
+for ($i = 0; $i < $num_columnas; $i++) {
+	$meta = $sentencia->getColumnMeta($i); // Obtener metadatos de la columna
+	$nombre_columna = $meta['name']; // Nombre del atributo
+	echo "<th scope='col' style='text-align: center'>" . htmlspecialchars($nombre_columna) . "</th>";
+}
+         ?>
+		 <th scope='col' style='text-align: center'>Edit</th>
+		 <th scope='col' style='text-align: center'>Delete</th>
 
 					</tr>
+					
+				
 				</thead>
 				<tbody>
 					<!--
 					Atención aquí, sólo esto cambiará. Pd: no ignorar las llaves de inicio y cierre {}
 					-->
-					<?php foreach($regiones as $region)
+					<?php foreach($parametros as $parametro)
 					{?>
 					<tr>
-						<td><?php echo $region->id_region ?></td>
-						<td><?php echo $region->nom_region ?></td>
-						<td><a class="btn btn-warning" href="<?php echo "edit_regiones.php?id_region=" . $region->id_region?>">Editar 📝</a></td>
-						<td><a class="btn btn-danger" href="<?php echo "elim_regiones.php?id_region=" . $region->id_region?>">Eliminar 🗑️</a></td>
+						<td><?php echo $parametro->id_empresa ?></td>
+						<td><?php echo $parametro->nom_empresa ?></td>
+						<td><?php echo $parametro->ind_perio_pago ?></td>
+
+						<td><?php echo $parametro->val_smlv ?></td>
+						<td><?php echo $parametro->val_auxtrans ?></td>
+						<td><?php echo $parametro->ano_nomina ?></td>
+						<td><?php echo $parametro->mes_nomina ?></td>
+						<td><?php echo $parametro->val_por_intces  ?></td>
+						<td><?php echo $parametro->num_diasmes  ?></td>
+
+
+						<td><a class="btn btn-warning" href="<?php echo "edit_regiones.php?id_empresa=" . $parametro->id_empresa?>">Editar 📝</a></td>
+						<td><a class="btn btn-danger" href="<?php echo "elim_regiones.php?id_empresa=" . $parametro->id_empresa?>">Eliminar 🗑️</a></td>
 					</tr>
 					<?php
 					} ?>

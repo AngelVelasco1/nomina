@@ -1,12 +1,12 @@
 <?php
 session_start();
 /* DATABASE CONFIGURATION */
-define('DB_SERVER', '172.16.1.254');
+define('DB_SERVER', 'localhost');
 define('PORT', '5432');
 define('DB_USERNAME', 'postgres');
 define('DB_PASSWORD', 'PgSena2024');
-define('DB_DATABASE', 'db_bnpro');
-define("BASE_URL", "http://172.16.1.254/PHPLoginHash/"); // Eg. http://yourwebsite.com
+define('DB_DATABASE', 'nomina_adso');
+define("BASE_URL", "http://localhost/PHPLoginHash/"); // Eg. http://yourwebsite.com
 
 function getDB() 
 {

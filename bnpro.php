@@ -15,7 +15,7 @@ if (!empty($_POST['loginSubmit']))
         $uid=$userClass->userLogin($usernameEmail,$password);
         if($uid)
         {
-            $url=BASE_URL.'../bnpro/menu.html';
+            $url=BASE_URL.'../nomina/menu.html';
             header("Location: $url"); // Page redirecting to home.php 
         }
         else
@@ -42,7 +42,7 @@ if (!empty($_POST['signupSubmit']))
         $uid=$userClass->userRegistration($username,$password,$email,$name);
         if($uid)
         {
-            $url=BASE_URL.'../bnpro/bnpro.php';
+            $url=BASE_URL.'../nomina/bnpro.php';
             header("Location: $url"); // Page redirecting to home.php
         }
         else
@@ -53,7 +53,7 @@ if (!empty($_POST['signupSubmit']))
 }
 ?>
 
-<h2>Bienvenido a BNPRO</h2>
+<h2>Bienvenido a Nomina</h2>
 <link href="css/login.css" media="screen" rel="stylesheet" type="text/css" />
 <div id="login">
 <h3>Login BNPRO</h3>
