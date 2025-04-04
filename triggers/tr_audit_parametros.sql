@@ -1,0 +1,2 @@
+CREATE OR REPLACE TRIGGER tr_audit_cargos BEFORE INSERT OR UPDATE ON tab_pmtros
+FOR EACH ROW EXECUTE PROCEDURE sp_audit_tables();

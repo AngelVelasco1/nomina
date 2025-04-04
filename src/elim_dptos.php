@@ -15,7 +15,7 @@ include_once "base_de_datos.php";
 $sentencia = $base_de_datos->prepare("SELECT fun_delete_dptos( ? );");
 $resultado = $sentencia->execute([$id_dpto]);
 if ($resultado === true) {
-    header("Location: listar_dptos.php");
+    header("Location: listar_cargos.php");
 } else {
     echo "Algo salió mal... Go back to the elemental school";
 }

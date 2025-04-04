@@ -36,7 +36,7 @@ Definir el encabezado de todos los programas
         <div class="collapse navbar-collapse" id="miNavbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./listar_dptos.php">Listar</a>
+                    <a class="nav-link" href="./listar_cargos.php">Listar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./forma_dptos.php">Agregar</a>
