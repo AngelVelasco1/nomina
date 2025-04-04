@@ -13,11 +13,12 @@ BEGIN
             RETURN NEW;
         END IF;
         IF TG_OP = 'DELETE' THEN
-            INSERT INTO tab_reg_del (table_name, deleted_data, user_delete, date_delete) VALUES(TG_TABLE_NAME, row_to_json(OLD), CURRENT_USER, CURRENT_TIMESTAMP);
+            INSERT INTO tab_reg_del (table_name, deleted_data, user_delete, date_delete) VALUES(TG_TABLE_NAME, OLD, CURRENT_USER, CURRENT_TIMESTAMP);
             RETURN OLD;
         END IF;
 END;
 $$ LANGUAGE plpgsql;
 DROP FUNCTION sp_audit_tables();
-
+DELETE FROM tab_emplea WHERE id_emplea = 91423627;
+SELECT * FROM tab_reg_del;
 DELETE FROM tab_emplea

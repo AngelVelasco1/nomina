@@ -11,11 +11,12 @@ DROP TABLE IF EXISTS tab_meses;
 CREATE TABLE IF NOT EXISTS tab_reg_del (
     id SERIAL PRIMARY KEY,
     table_name VARCHAR NOT NULL,
-    deleted_data JSONB,
+    deleted_data VARCHAR,
     user_delete VARCHAR,
     date_delete TIMESTAMP WITHOUT TIME ZONE 
 
 );
+DROP TABLE tab_reg_del;
 CREATE TABLE IF NOT EXISTS tab_conceptos
 (
     id_concepto     DECIMAL(2,0)    NOT NULL,
