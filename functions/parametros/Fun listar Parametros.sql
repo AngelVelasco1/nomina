@@ -1,4 +1,4 @@
--- Active: 1743100572938@@127.0.0.1@5432@nomina_adso
+-- Active: 1744051677740@@localhost@5432@nomina_adso
 CREATE OR REPLACE FUNCTION sp_listar_parametros()
 RETURNS TABLE (
  id_empresa      DECIMAL(10,0), 

@@ -11,8 +11,8 @@ Este archivo lista todos los datos de la tabla, obteniendo a los mismos como un 
 <?php
 include_once "base_de_datos.php";
 /*echo "Entro a Listar para saber si está entrando o no....";*/
-$sentencia = $base_de_datos->query('SELECT * FROM sp_listar_parametros()');
-$parametros = $sentencia->fetchAll(PDO::FETCH_OBJ);
+$sentencia = $base_de_datos->query('SELECT * FROM sp_listar_conceptos()');
+$conceptos = $sentencia->fetchAll(PDO::FETCH_OBJ);
 $num_columnas = $sentencia->columnCount();
 ?>
 <!--Recordemos que podemos intercambiar HTML y PHP como queramos-->
@@ -45,22 +45,16 @@ $num_columnas = $sentencia->columnCount();
 					<!--
 					Atención aquí, sólo esto cambiará. Pd: no ignorar las llaves de inicio y cierre {}
 					-->
-					<?php foreach ($parametros as $concepto) { ?>
+					<?php foreach ($conceptos as $concepto) { ?>
 						<tr>
-							<td><?php echo $concepto->id_empresa ?></td>
-							<td><?php echo $concepto->nom_empresa ?></td>
+							<td><?php echo $concepto->id_concepto ?></td>
+							<td><?php echo $concepto->nom_concepto ?></td>
 							<td><?php echo $concepto->ind_perio_pago ?></td>
 
-							<td><?php echo $concepto->val_smlv ?></td>
-							<td><?php echo $concepto->val_auxtrans ?></td>
-							<td><?php echo $concepto->ano_nomina ?></td>
-							<td><?php echo $concepto->mes_nomina ?></td>
-							<td><?php echo $concepto->val_por_intces  ?></td>
-							<td><?php echo $concepto->num_diasmes  ?></td>
 
 
-							<td><a class="btn btn-warning" href="<?php echo "edit_parametros.php?id_empresa=" . $concepto->id_empresa ?>">Editar 📝</a></td>
-							<td><a class="btn btn-danger" href="<?php echo "elim_parametros.php?id_empresa=" . $concepto->id_empresa ?>">Eliminar 🗑️</a></td>
+							<td><a class="btn btn-warning" href="<?php echo "edit_conceptos.php?id_concepto=" . $concepto->id_concepto ?>">Editar 📝</a></td>
+							<td><a class="btn btn-danger" href="<?php echo "elim_conceptos.php?id_concepto=" . $concepto->id_concepto ?>">Eliminar 🗑️</a></td>
 						</tr>
 					<?php
 					} ?>

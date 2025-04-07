@@ -17,7 +17,7 @@ $num_columnas = $sentencia->columnCount();
 
 ?>
 <!--Recordemos que podemos intercambiar HTML y PHP como queramos-->
-<?php include_once "encab_dptos.php" ?>
+<?php include_once "encab_cargos.php" ?>
 <div class="row">
 	<!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
@@ -49,8 +49,10 @@ $num_columnas = $sentencia->columnCount();
 						<tr>
 							<td><?php echo $cargo->id_cargo ?></td>
 							<td><?php echo $cargo->nom_cargo ?></td>
-							<td><a class="btn btn-warning" href="edit_dptos.php?id_cargo=<?php echo $cargo->id_cargo; ?>&id_dpto=<?php echo $cargo->id_cargo; ?>">Editar 📝</a></td>
-							<td><a class="btn btn-warning" href="elim_dptos.php?id_cargo=<?php echo $cargo->id_cargo; ?>&id_dpto=<?php echo $cargo->id_cargo; ?>">Eliminar 🗑️</a></td>
+							
+							<td><a class="btn btn-warning" href="<?php echo "edit_dptos.php?id_cargo=" . $cargo->id_cargo ?>">Editar 📝</a></td>
+							<td><a class="btn btn-danger" href="<?php echo "elim_dptos.php?id_cargo=" . $cargo->id_cargo ?>">Eliminar 🗑️</a></td>
+
 						</tr>
 					<?php
 					} ?>

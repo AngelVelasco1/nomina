@@ -1,4 +1,4 @@
--- Active: 1743100572938@@127.0.0.1@5432@nomina_adso
+-- Active: 1744051677740@@localhost@5432@nomina_adso
 CREATE OR REPLACE FUNCTION sp_insert_pmtros(
     pid_empresa tab_pmtros.id_empresa%TYPE,
     pnom_empresa tab_pmtros.nom_empresa%TYPE,

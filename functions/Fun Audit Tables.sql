@@ -1,10 +1,10 @@
--- Active: 1743100572938@@127.0.0.1@5432@nomina_adso
+-- Active: 1744051677740@@localhost@5432@nomina_adso
 CREATE OR REPLACE FUNCTION sp_audit_tables() RETURNS TRIGGER AS
 $$
 BEGIN
      IF TG_OP = 'INSERT' THEN
             NEW.user_insert = CURRENT_USER;
-            NEW.fec_insert = CURRENT_TIMESTAMP;
+            NEW.fecha_insert = CURRENT_TIMESTAMP;
             RETURN NEW;
         END IF;
         IF TG_OP = 'UPDATE' THEN

@@ -14,7 +14,7 @@ Definir el encabezado de todos los programas
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Sistema BNPRO">
-    <meta name="author" content="ADSO 2023">
+    <meta name="author" content="BNPRO">
     <title>BNPRO | BNPRO</title>
     <!-- Cargar el CSS de Boostrap-->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@ Definir el encabezado de todos los programas
     <!-- Definición del menú -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" target="_blank" href="//bnpro.co">
-        Sistema de Gestión de Proyectos
+        Sistema de Gestión de Proyectos BNPRO
         </a>
 
     <!--    <?php
@@ -36,10 +36,10 @@ Definir el encabezado de todos los programas
         <div class="collapse navbar-collapse" id="miNavbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./listar_parametros.php">Listar</a>
+                    <a class="nav-link" href="./listar_cargos.php">Listar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./form_parametros.php">Agregar</a>
+                    <a class="nav-link" href="./form_cargos.php">Agregar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../menu.html">Volver</a>

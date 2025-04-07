@@ -1,4 +1,4 @@
--- Active: 1743100572938@@127.0.0.1@5432@nomina_adso
+-- Active: 1744051677740@@localhost@5432@nomina_adso
 CREATE OR REPLACE FUNCTION fun_delete_empleados(
     pid_emplea tab_emplea.id_emplea%TYPE
 ) RETURNS BOOLEAN AS

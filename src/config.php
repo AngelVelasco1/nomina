@@ -4,7 +4,7 @@ session_start();
 define('DB_SERVER', 'localhost');
 define('PORT', '5432');
 define('DB_USERNAME', 'postgres');
-define('DB_PASSWORD', 'PgSena2024');
+define('DB_PASSWORD', '@Davidteam1');
 define('DB_DATABASE', 'nomina_adso');
 define("BASE_URL", "http://localhost/PHPLoginHash/"); // Eg. http://yourwebsite.com
 
@@ -23,7 +23,7 @@ function getDB()
     }
     catch (PDOException $e)
     {
-        echo 'Connection failed: ' . $e->getMessage();
+        echo 'Connection failed:' . $e->getMessage();
     }
 }
 ?>

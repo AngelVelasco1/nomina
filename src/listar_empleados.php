@@ -11,8 +11,8 @@ Este archivo lista todos los datos de la tabla, obteniendo a los mismos como un 
 <?php
 include_once "base_de_datos.php";
 /*echo "Entro a Listar para saber si está entrando o no....";*/
-$sentencia = $base_de_datos->query('SELECT * FROM sp_listar_parametros()');
-$parametros = $sentencia->fetchAll(PDO::FETCH_OBJ);
+$sentencia = $base_de_datos->query('SELECT * FROM sp_listar_empleados()');
+$empleados = $sentencia->fetchAll(PDO::FETCH_OBJ);
 $num_columnas = $sentencia->columnCount();
 ?>
 <!--Recordemos que podemos intercambiar HTML y PHP como queramos-->
@@ -45,22 +45,25 @@ $num_columnas = $sentencia->columnCount();
 					<!--
 					Atención aquí, sólo esto cambiará. Pd: no ignorar las llaves de inicio y cierre {}
 					-->
-					<?php foreach ($parametros as $concepto) { ?>
+					<?php foreach ($empleados as $empleado) { ?>
 						<tr>
-							<td><?php echo $concepto->id_empresa ?></td>
-							<td><?php echo $concepto->nom_empresa ?></td>
-							<td><?php echo $concepto->ind_perio_pago ?></td>
+							<td><?php echo $empleado->id_emplea ?></td>
+							<td><?php echo $empleado->nom_emplea ?></td>
+                            <td><?php echo $empleado->ape_emplea ?></td>
+							<td><?php echo $empleado->ind_genero ?></td>
+                            <td><?php echo $empleado->dir_emplea ?></td>
+                            <td><?php echo $empleado->tel_emplea ?></td>
+                            <td><?php echo $empleado->ind_estrato ?></td>
+                            <td><?php echo $empleado->ind_est_civil ?></td>
+                            <td><?php echo $empleado->num_hijos ?></td>
+                            <td><?php echo $empleado->val_tipo_sangre ?></td>
+                            <td><?php echo $empleado->val_edad ?></td>
+                            <td><?php echo $empleado->id_cargo ?></td>
+                            <td><?php echo $empleado->val_sal_basico ?></td>
+                            <td><?php echo $empleado->fec_ingreso ?></td>
 
-							<td><?php echo $concepto->val_smlv ?></td>
-							<td><?php echo $concepto->val_auxtrans ?></td>
-							<td><?php echo $concepto->ano_nomina ?></td>
-							<td><?php echo $concepto->mes_nomina ?></td>
-							<td><?php echo $concepto->val_por_intces  ?></td>
-							<td><?php echo $concepto->num_diasmes  ?></td>
-
-
-							<td><a class="btn btn-warning" href="<?php echo "edit_parametros.php?id_empresa=" . $concepto->id_empresa ?>">Editar 📝</a></td>
-							<td><a class="btn btn-danger" href="<?php echo "elim_parametros.php?id_empresa=" . $concepto->id_empresa ?>">Eliminar 🗑️</a></td>
+							<td><a class="btn btn-warning" href="<?php echo "edit_empleados.php?id_emplea=" . $empleado->id_emplea ?>">Editar 📝</a></td>
+							<td><a class="btn btn-danger" href="<?php echo "elim_empleados.php?id_emplea=" . $empleado->id_emplea ?>">Eliminar 🗑️</a></td>
 						</tr>
 					<?php
 					} ?>
