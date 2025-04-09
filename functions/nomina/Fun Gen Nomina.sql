@@ -1,3 +1,4 @@
+-- Active: 1744051677740@@localhost@5432@nomina_adso
 CREATE OR REPLACE FUNCTION fun_gen_nomina(wano_nomina tab_nomina.ano_nomina%TYPE,wmes_nomina tab_nomina.mes_nomina%TYPE,
                                           wper_nomina tab_nomina.per_nomina%TYPE) RETURNS BOOLEAN AS
 $$
@@ -65,7 +66,7 @@ $$
         OPEN wcur_emplea FOR EXECUTE wquery_empl;
 			FETCH wcur_emplea INTO wreg_emplea;
             WHILE FOUND LOOP
---			    RAISE NOTICE '% % % %',wreg_emplea.id_emplea,wreg_emplea.nom_emplea,wreg_emplea.ape_emplea,wreg_emplea.val_sal_basico;
+		    RAISE NOTICE '% % % %',wreg_emplea.id_emplea,wreg_emplea.nom_emplea,wreg_emplea.ape_emplea,wreg_emplea.val_sal_basico;
 -- ACÁ EMPEZAMOS A RECORRER LA TABLA DE CONCEPTOS PARA LIQUIDAR LA NÓMINA, UNO A UNO...
                 wsum_devengado  = 0;
                 wsum_deducido   = 0;
@@ -73,8 +74,8 @@ $$
              OPEN wcur_concep FOR EXECUTE wquery_conc;
                     FETCH wcur_concep INTO wreg_concep;
                     WHILE FOUND LOOP
---                      RAISE NOTICE '% % % % %',wreg_concep.id_concepto,wreg_concep.nom_concepto,wreg_concep.ind_operacion,
---                                          wreg_concep.val_porcent,wreg_concep.val_fijo;
+                     RAISE NOTICE '% % % % %',wreg_concep.id_concepto,wreg_concep.nom_concepto,wreg_concep.ind_operacion,
+                                          wreg_concep.val_porcent,wreg_concep.val_fijo;
 -- ACÁ EMPIEZAN LOS CÁLCULOS CHIMENGUENCHONES
                         IF wreg_pmtros.ind_perio_pago = 'Q' THEN
                             wval_salario = wreg_emplea.val_sal_basico / 2;

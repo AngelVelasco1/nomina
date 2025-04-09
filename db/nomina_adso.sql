@@ -85,7 +85,29 @@ CREATE TABLE IF NOT EXISTS tab_cargos
     fecha_update TIMESTAMP WITHOUT TIME ZONE,
     PRIMARY KEY(id_cargo)
 );
+select * from tab_nomina;
+INSERT INTO tab_nomina (
+    ano_nomina,
+    mes_nomina,
+    per_nomina,
+    id_emplea,
+    id_concepto,
+    val_dias_trab,
+    val_nomina,
+    user_insert,
+    fecha_insert
+) VALUES (
+    2025,        -- Año de la nómina
+    4,           -- Mes de la nómina
+    1,           -- Período (1 = primera quincena, 2 = segunda)
+    91423627,        -- ID del empleado
+    10,          -- ID del concepto (ej. salario base o aux trans)
+    15,          -- Días trabajados
+    600000 ,
+    'admin',     -- Usuario que inserta
+    CURRENT_TIMESTAMP);
 
+select * from tab_cargos;
 INSERT INTO tab_cargos VALUES(1,'Gerente General');
 INSERT INTO tab_cargos VALUES(2,'Secretaria General');
 INSERT INTO tab_cargos VALUES(3,'Gerente Comercial');
@@ -147,7 +169,7 @@ INSERT INTO tab_emplea VALUES(1015000005,'Pedro','El Escamoso',FALSE,'Lebrija',3
 INSERT INTO tab_emplea VALUES(1015000006,'Juanito','Alimaña',FALSE,'Piedecuesta Barro Blanco',3108888888,2,0,4,'O-',40,20,2000000,'2024-01-01');
 INSERT INTO tab_emplea VALUES(1015000007,'Yoshitomo','Cacaito',FALSE,'Rionegro',3109999999,2,0,5,'A+',28,16,2500000,'2024-01-01');
 INSERT INTO tab_emplea VALUES(1015000008,'Yessenya Vanessa','Sanabria de Janiot',TRUE,'San Miguel Casa 20',3111111111,3,0,1,'A-',25,13,4500000,'2024-01-01');
-
+select * from tab_emplea;
 CREATE INDEX idx_nom_emplea      ON tab_emplea(nom_emplea);
 CREATE INDEX idx_ape_emplea      ON tab_emplea(ape_emplea);
 CREATE INDEX idx_ind_estrato     ON tab_emplea(ind_estrato);
@@ -163,7 +185,23 @@ CREATE TABLE IF NOT EXISTS tab_meses
     fecha_update TIMESTAMP WITHOUT TIME ZONE,
     PRIMARY KEY(id_mes)
 );
-INSERT INTO tab_meses VALUES(1,'Enero');
+INSERT INTO tab_meses VALUES(1,'Enero', 'admin', '2024-10-02');
+INSERT INTO tab_meses VALUES(2,'Febrero', 'admin', '2024-10-02');
+INSERT INTO tab_meses VALUES(3,'Marzo', 'admin', '2024-10-02');
+INSERT INTO tab_meses VALUES(4,'Abril', 'admin', '2024-10-02');
+INSERT INTO tab_meses VALUES(5,'Mayo', 'admin', '2024-10-02');
+INSERT INTO tab_meses VALUES(6,'Junio', 'admin', '2024-10-02');
+INSERT INTO tab_meses VALUES(7,'Julio', 'admin', '2024-10-02');
+INSERT INTO tab_meses VALUES(8,'Agosto', 'admin', '2024-10-02');
+
+INSERT INTO tab_meses VALUES(9,'Septiembre', 'admin', '2024-10-02');
+
+INSERT INTO tab_meses VALUES(10,'Octubre', 'admin', '2024-10-02');
+
+INSERT INTO tab_meses VALUES(11,'Noviembre', 'admin', '2024-10-02');
+
+INSERT INTO tab_meses VALUES(12,'Diciembre', 'admin', '2024-10-02');
+
 INSERT INTO tab_meses VALUES(2,'febrero');
 INSERT INTO tab_meses VALUES(3,'Marzo');
 INSERT INTO tab_meses VALUES(4,'Abril');
